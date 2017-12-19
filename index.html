@@ -60,7 +60,7 @@
     </div>
     <div class="row justify-content-center m35 ">
         <div class="col-sm-7 col-8">
-            <input class="w-100"></input>
+            <input class="w-100" id="input_1"></input>
         </div>
         <div class="col-auto">
             <img alt="Google" height="20" id="hplogo" src="pic/microphone.png">
@@ -71,7 +71,9 @@
     </div>
     <div class="row justify-content-center m-2">
         <div class="col-auto">
-            <a href="https://bhi61nm2cr3mkdgk1dtaov18-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/pig_thm.jpg"><button class="custom_button" onclick="alertPig()">Google搜尋</button></a>
+            <a href="https://bhi61nm2cr3mkdgk1dtaov18-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/pig_thm.jpg">
+                <button id="search_" class="custom_button" onclick="alertPig()">Google搜尋</button>
+            </a>
             <button class="custom_button">好手氣</button>
         </div>
     </div>
@@ -84,11 +86,6 @@
 
 
     <!-- Optional JavaScript -->
-    <script>
-        function alertPig(){
-            alert("You are a pig");
-        }
-    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -96,6 +93,22 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
+
+    <script>
+        function alertPig() {
+            alert("You are a pig");
+        }
+        $("#input_1").keypress(
+            function (e) {
+                code = (e.keyCode ? e.keyCode : e.which);
+                if(code == 13){
+                    $("#search_").click();
+                }
+            }
+        )
+    </script>
+
+
 </body>
 
 </html>
